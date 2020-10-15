@@ -6,9 +6,10 @@ pip list - список установленных пакетов
 *venv 		 - инструмент окружения
 *Folder_name - папка проекта
 *запускается в папке назначения через консоль
+*VS code определить как окружение
 
 1)создание окружения
-python -m venv Folder_name
+python -m venv .Folder_name
 
 2)Активация окружения (deactivate - деактивировать)
 ..\Scripts\activate.bat
