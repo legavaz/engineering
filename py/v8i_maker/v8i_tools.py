@@ -15,25 +15,26 @@ def request_api_1c(param: str):
 def scan_write_bases():
     m_text = ''
     iterator = 1
-    for each in settings.URL_1C_API:
-        baseName = request_api_1c(each)
 
-        for each_basename in baseName:
-            if settings.DEBUG:
-                print(each_basename)
-            iterator += 1
-            r_temp = settings.template
+    baseName = request_api_1c(settings.URL_1C_API)
 
-            name = '{}/{} ({})'.format(each_basename['server'], each_basename['Name'], each_basename['Descr'])
+    for each_basename in baseName:
+        if settings.DEBUG:
+            print(each_basename)
+        iterator += 1
+        r_temp = settings.template
 
-            r_temp = r_temp.replace('%name%', name)
-            r_temp = r_temp.replace('%server%', each_basename['server'])
-            r_temp = r_temp.replace('%basename%', each_basename['Name'])
-            r_temp = r_temp.replace('%folder%', each_basename['server'])
-            r_temp = r_temp.replace('%order_list%', str(iterator))
-            r_temp = r_temp.replace('%order_tree%', str(iterator+1))
+        name = '{} on {} ({})'.format(each_basename['Name'], each_basename['server'], each_basename['Descr'])
 
-            m_text = m_text + r_temp
+        r_temp = r_temp.replace('%name%', name)
+        r_temp = r_temp.replace('%server%', each_basename['server'])
+        r_temp = r_temp.replace('%basename%', each_basename['Name'])
+        r_temp = r_temp.replace('%folder%', each_basename['server'])
+        r_temp = r_temp.replace('%guid%', each_basename['guid'])
+        r_temp = r_temp.replace('%order_list%', str(iterator))
+        r_temp = r_temp.replace('%order_tree%', str(iterator + 1))
+
+        m_text = m_text + r_temp
 
     f = open(settings.v8i_file, 'w', encoding='utf-8')
     f.write(m_text)
