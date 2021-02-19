@@ -5,7 +5,7 @@ DEBUG = True
 
 bases = "danilin-vi; srv-1ctest; 1c-server"
 
-URL_1C_API = """http://danilin-vi/dnv_note/hs/query/query_data/{"id_api_query": "BazyNaKlastere","param": {"servers": "{%bases%}" }}"""
+URL_1C_API = """http://danilin-vi/dnv_note/hs/query/query_data/{"id_api_query": "BazyNaKlastere","param": {"servers": "%bases%" }}"""
 URL_1C_API = URL_1C_API.replace('%bases%', bases)
 
 
