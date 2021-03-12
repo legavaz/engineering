@@ -17,6 +17,8 @@ docker run -d -p 12345:80 nginx
     --rm                                                        //можно сразу удалить, чтобы не засорять контейнеры
 	docker run -it --network host ocr_pak						//проброс сети
 
+docker run -t -i ocr_pak /bin/bash
+
 //win запуск
 docker run -d --name tg2 -v D:\temp\db:/home/db tgfinance
     -v D:\temp\db:/home/db (проброс папки "D:\temp\db" в "/home/db")
