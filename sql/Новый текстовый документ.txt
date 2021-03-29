@@ -1,0 +1,37 @@
+sig_Buh_L_PACK 
+pdy_work
+biv_buh3
+danv_copy_lpack_buh3 
+
+
+--восстановление копи
+USE [master]
+GO
+RESTORE DATABASE danv_copy_lpack_buh3 
+FROM DISK = '\\vm-backup\1c_backup\Daily\Buh-L-PACK\Buh-L-PACK_02_10_2019_230242.bak' 
+WITH REPLACE
+
+--восстановление копи мес€ц
+USE [master]
+GO
+RESTORE DATABASE biv_buh3
+FROM DISK = '\\vm-backup\1c_backup\Monthly\Buh-L-PACK\buh-l-pack_01_01_2020_231012.bak' 
+WITH REPLACE
+
+
+--отправка письма
+EXEC msdb.dbo.sp_send_dbmail  
+@profile_name = 'почтовый профиль',
+@recipients='dvi@l-pak.ru',
+@subject='Testing Email from SQL Server',
+@body='<p>It Worked!</p><p>Ѕаза восстановлена</p>',
+@body_format='HTML',
+@from_address='Sender Name <ta1c@l-pak.ru>',
+@reply_to='dvi@l-pak.ru'
+
+
+
+--просмотр очереди
+use msdb
+go
+select * from sysmail_allitems   
