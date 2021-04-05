@@ -1,0 +1,10 @@
+//скачивание образа
+
+docker pull mcr.microsoft.com/mssql/server
+
+--docker pull microsoft/mssql-server-linux
+docker pull microsoft/mssql-server-linux:2017-latest
+
+
+запуск докер компосу
+docker-compose up -d
