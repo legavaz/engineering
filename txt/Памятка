@@ -1,0 +1,6 @@
+
+Остановить службу 1C Enterprise Server Agent.
+Запустить редактор системного реестра. Чтобы открыть редактор реестра, необходимо нажать Windows + R (или Пуск-Выполнить) и ввести в командную строку regedit.
+Найти ветку реестра [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\1C:Enterprise 8.1 Server Agent].
+Скорректировать атрибут «ImagePath»= , добавив «-debug».
+Запустить службу 1C Enterprise Server Agent.

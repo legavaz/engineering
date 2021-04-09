@@ -14,3 +14,5 @@ VScode (https://code.visualstudio.com/Download)
 Precommit1C 
 (https://github.com/xDrivenDevelopment/precommit1c)
 (opm install precommit1c)
+
+1С Параметр отладки фоновых заданий: РежимОтладки
