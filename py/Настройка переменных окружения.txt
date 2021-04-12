@@ -10,7 +10,7 @@ pip install -r requirements.txt
 *VS code определить как окружение
 
 1)создание окружения
-python -m venv .Folder_name
+python -m venv .venv
 
 2)Активация окружения (deactivate - деактивировать)
 ..\Scripts\activate.bat
