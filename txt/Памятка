@@ -4,3 +4,7 @@
 Найти ветку реестра [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\1C:Enterprise 8.1 Server Agent].
 Скорректировать атрибут «ImagePath»= , добавив «-debug».
 Запустить службу 1C Enterprise Server Agent.
+
+Логин/Пароль 1с итс
+9556128-L-pack
+ZjzZzgG9556128
