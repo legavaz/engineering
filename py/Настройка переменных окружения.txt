@@ -14,3 +14,9 @@ python -m venv .venv
 
 2)Активация окружения (deactivate - деактивировать)
 ..\Scripts\activate.bat
+
+для powerShell
+1) запустить повер шел под админом
+и выполнить команду
+Set-ExecutionPolicy Unrestricted
+2)..\Scripts\activate.ps1
